@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 MAINTAINER Dmitry Kargin <dmitry.n.kargin@gmail.com>
 
