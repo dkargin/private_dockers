@@ -50,7 +50,7 @@ RUN pip3 install --upgrade pip && pip3 install conan pytest psutil
 # Setting up default conan profile
 RUN conan profile new default --detect && conan profile update settings.compiler.libcxx=libstdc++11 default
 
-ARG CMAKE_VERSION=3.21.4
+ARG CMAKE_VERSION=3.23.1
 
 ENV DEBIAN_FRONTEND="noninteractive"
 RUN wget https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-Linux-x86_64.sh \

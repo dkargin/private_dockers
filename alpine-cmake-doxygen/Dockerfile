@@ -1,4 +1,4 @@
-FROM tingoose/alpine-cmake:v0.2
+FROM tingoose/alpine-cmake:v0.3
 
 MAINTAINER Dmitry Kargin <dmitry.n.kargin@gmail.com>
 
