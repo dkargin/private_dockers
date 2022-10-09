@@ -27,3 +27,6 @@ RUN mkdir Open3D-build && cd Open3D-build && cmake ../Open3D \
     cmake --install . && rm -rf Open3D-build && rm -rf Open3D
 
 #-DBUILD_FILAMENT_FROM_SOURCE=ON
+RUN pip install --upgrade conan && apt-get install sudo
+
+RUN conan install qt/5.15.2@ -o qt:shared=True
