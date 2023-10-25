@@ -1,24 +1,25 @@
-FROM nvidia/cuda:11.2.2-devel-ubuntu18.04
+FROM nvidia/cuda:12.0.0-devel-ubuntu20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y software-properties-common && \
-	add-apt-repository ppa:ubuntu-toolchain-r/test
-
-RUN apt-get install -y \
+	add-apt-repository ppa:ubuntu-toolchain-r/test \
+	&& apt-get install -y \
 		python3-pip \
-        build-essential \
-        git \
-        wget \
-        unzip \
-        yasm \
-        ninja-build \
-        pkg-config \
-        libswscale-dev \
-        libtbb-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libtiff-dev \
-        libavformat-dev \
-        libpq-dev \
+		build-essential \
+		git \
+		wget \
+		unzip \
+		yasm \
+		ninja-build \
+		pkg-config \
+		libswscale-dev \
+		libtbb-dev \
+		libjpeg-dev \
+		libpng-dev \
+		libtiff-dev \
+		libavformat-dev \
+		libpq-dev \
 		libxine2-dev \
 		libglew-dev \
 		libtiff5-dev \
@@ -32,18 +33,13 @@ RUN apt-get install -y \
 		libswscale-dev \
 		libeigen3-dev \
 		libgtk2.0-dev \
-	    cuda-nsight-systems-11-2 \
+		cuda-nsight-systems-12-0 \
 		pkg-config \
 		ninja-build \
 		python3-dev \
-    	gdb gdbserver \
-    	gcc-10 \
-    	g++-10 \
-		## Cleanup
-		&& rm -rf /var/lib/apt/lists/*
-
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 10 && \
-	update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 10
+		gdb gdbserver \
+	## Cleanup
+	&& rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip && pip3 install conan pytest psutil
 

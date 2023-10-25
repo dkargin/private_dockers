@@ -26,6 +26,7 @@ Ubuntu-based image with both cuda11 and cmake:
  - cuda-cmake:v0.2
  - cuda-cmake:v0.3 - added conan build to image
  - cuda-cmake:v0.4 - updated cmake.
+ - cuda-cmake:v0.5 - updated base image to cuda:12.0.0-devel-ubuntu20.04 and used default C++ compiler.
 
 ### cuda-cmake:v0.4 ###
 
@@ -38,6 +39,7 @@ Image for physics project.
  - cuda-physics:v0.3
  - cuda-physics:v0.4 - added more python files
  - cuda-physics:v0.4.1 - fixed mesa-3d requirements
+ - cuda-physics:v0.5 - updated cuda-cmake version and added alembic library.
 
 ## cuda-cmake-open3d ##
 
